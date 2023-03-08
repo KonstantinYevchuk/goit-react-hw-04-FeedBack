@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+
+
 import { Component } from 'react';
 import { Statistics } from 'components/Statistics/Statistics';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
@@ -7,18 +8,11 @@ import { Notification } from 'components/Notofication/Notification';
 
 
 export class Feedback extends Component {
-    static defaultProps = {
-        initial: 0
-    }
-    static propTypes = {
-        initial: PropTypes.number.isRequired
-    
-    }
     state = {
-        good: this.props.initial,
-        neutral: this.props.initial,
-        bad: this.props.initial,
-      }
+        good: 0,
+        neutral: 0,
+        bad: 0
+      } 
     clickButton = e => {
         const option = e.target.name;
         this.setState((prevState) => ({
